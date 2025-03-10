@@ -171,7 +171,7 @@ const Circle = styled.div`
 
 `;
 
-const S_icon = styled.div`
+const SkillKnow = styled.div`
     color: ${props => props.theme.text};
     width: calc(2.5rem + 2vw);
     height: calc(2.5rem + 2vw);
@@ -215,7 +215,7 @@ const Skill = ({ name, icon: Icon, x, y }) => {
       initial={{ x: 0, y: 0 }}
       animate={{ x: x, y: y }} 
       transition={{ duration: 0.6 }} >
-        <S_icon as={Icon}  />
+        <SkillKnow as={Icon}  />
         <span>{name}</span>
     </motion.h3>
   )
