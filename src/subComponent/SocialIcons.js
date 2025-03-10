@@ -73,7 +73,7 @@ export default function SocialIcons(props) {
                  initial={{scale:0}}
                  animate={{scale:[0,1,1.5,1]}}
                  transition={{type:"tween", duration:1, delay:1.4}} >
-        <NavLink to='https://wa.me/9750063883' style={{color : 'inherit'}} target='_blank' >
+        <NavLink to='https://wa.link/5drw0l' style={{color : 'inherit'}} target='_blank' >
             <WhatsApp width={23} height={23} fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body} />
         </NavLink>
       </motion.div>
