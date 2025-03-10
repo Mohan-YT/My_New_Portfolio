@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect, useState } from 'react'
+import React, { lazy, Suspense } from 'react'
 import styled, { keyframes, ThemeProvider } from 'styled-components'
 
 import { motion } from 'framer-motion'
@@ -24,68 +24,60 @@ const MainContainer = styled(motion.div)`
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  position: relative;
+`
 
-  .About{
-    border: 2px solid ${props => props.theme.text};
-    color: ${props => props.theme.text};
-    padding: 2rem;
-    width: 48vw;
-    height: 58vh;
-    z-index: 3;
-    line-height: 1.5;
+const About = styled(motion.div)`
+  border: 2px solid ${(props) => props.theme.text};
+  color: ${(props) => props.theme.text};
+  padding: 2rem;
+  width: 50vw;
+  height: 60vh;
+  z-index: 3;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(0.6rem + 1vw);
+ backdrop-filter: blur(4px);
+  
+  position: absolute;
+  left: calc(5rem + 5vw);
+  top: 10rem;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: 'Ubuntu Mono', monospace;
+  font-style: italic;
 
-    font-size: calc(0.6rem + 0.9vw);
-    backdrop-filter: blur(4px);
+  ${mediaMax(50)`
+          width: 50vw;
+          height: 55vh;
+          top:55%;
+          left:45%;
+          transform:translate(-50%,-50%);
+          padding: 1.5rem;
 
+  `};
+  ${mediaMax(40)`
+          width: 60vw;
+          height: 50vh;
+          top:50%;
+          left:50%;
+          transform:translate(-50%,-50%);
 
-    position: absolute;
-    left: calc(5rem + 5vw);
-    top: 10rem;
+  `};
+  ${mediaMax(30)`
+          width: 50vw;
+          height: auto;
+          backdrop-filter: blur(1.5px);
+          margin-top:2rem;
 
-    font-family: 'ubutntu Mono', monospace;
-    font-style: italic;
+  `};
 
+${mediaMax(20)`
+          padding: 1rem;
+          font-size: calc(0.5rem + 1vw);
+  `};
 
-    ${mediaMax(50)`
-      top:7rem;
-    `}
-
-    ${mediaMax(40)`
-      top:6.8rem;
-      left: calc(4.5rem + 4.5vw);
-    `}
-
-    ${mediaMax(30)`
-      top:6.5rem;
-      left: calc(4rem + 4vw);
-      padding:1.2rem;
-    `}
-
-    ${mediaMax(28)`
-        top: 5.8rem ;
-        font-size: calc(0.664rem + 0.7vw);
-        padding:1.1rem;
-    `}
-
-    ${mediaMax(25)`
-        top:5.5rem;
-        font-size: calc(0.640rem + 0.674vw);
-    `}
-
-    ${mediaMax(23)`
-        top:5.5rem;
-        font-size: calc(0.6rem + 0.674vw);
-    `}
-
-    ${mediaMax(20)`
-        font-size: calc(0.6rem + 0.6vw);
-        padding:1rem;
-    `}
-  }
 `
 
 const float = keyframes`
@@ -101,29 +93,24 @@ const float = keyframes`
 `
 
 
-const SpaceMan = styled.div`
+const SpaceMan = styled(motion.div)`
   position: absolute;
   top: 10%;
   right: 5%;
-  width: 25vw;
+  width: 30vw;
   animation: ${float} 4s ease-in-out infinite;
   z-index: 1;
 
   img{
     width: 100%;
     height: auto;
-    
+
   }
 
-  ${mediaMax(30)`
-    top:7%;
-    right:4%;
-  `}
+  ${mediaMax(50)`
+      z-index: 5;
+    `}
 
-  ${mediaMax(20)`
-    top:5.5%;
-    right:4%;
-  `}
 `
 
 const pageVariants = {
@@ -135,25 +122,6 @@ const pageVariants = {
 
 
 export default function AboutPage() {
-
-  const [height, setHeight] = useState("55vh");
-    useEffect(() => {
-        if (window.matchMedia("(max-width: 50em)").matches) {
-          setHeight("60vh");
-        }
-        if (window.matchMedia("(max-width: 30em)").matches) {
-          setHeight("68vh");
-        }
-        if (window.matchMedia("(max-width: 28em)").matches) {
-          setHeight("70vh");
-        }
-        if (window.matchMedia("(max-width: 25em)").matches) {
-          setHeight("71vh");
-        }
-        if (window.matchMedia("(max-width: 20em)").matches) {
-          setHeight("72vh");
-        }
-      },[]);
 
   return (
    <>
@@ -171,19 +139,24 @@ export default function AboutPage() {
                   <SocialIcons theme="dark" />
                   <SoundBar />
 
-                  <SpaceMan>
+                  <SpaceMan   initial={{ right: '-20%', top: '100%' }}
+                              animate={{
+                              right: '5%',
+                              top: '10%',
+                              transition: { duration: 2, delay: 0.5 },
+                            }}>
                       <motion.img  src={astronaut} alt="space=man" />
                   </SpaceMan>
 
-                  <motion.div className ='About' initial={{ opacity:0 , height:0 , delay:2.2 }}
-                                                animate={{ opacity : 1 , height:height , delay:2.2 }} 
+                  <About className ='About' initial={{ opacity:0 , height:0 , delay:2.2 }}
+                                                animate={{ opacity : 1 , height:"auto" , delay:2.2 }} 
                                                 transition={{ duration: 0.7 }} >
                       I'm a front-end developer located in India. I love to create simple yet beautiful websites with great user experience.
                       <br /><br />
                       I'm interested in the whole frontend stack Like trying new things and building great projects. I'm an independent freelancer and blogger. I love to write blogs and read books.
                       <br /><br />
                       I love exploring creativity in web design and believe everything is art with consciousness..Connect with me through my social links!
-                  </motion.div>
+                  </About>
 
                     <BigTitles text="ABOUT" top="3.5%" right="15%" />
                     
