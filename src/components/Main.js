@@ -222,7 +222,8 @@ export default function Main() {
 
 
 
-  const resumePath = "/resume/MOHAN PRASANTH.pdf";
+  const resumePath = "/resume/MOHAN.pdf";
+  
   return (
     <Suspense fallback={<Loading />} >
         <MainContainer variants={pageVariants}

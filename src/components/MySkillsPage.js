@@ -2,8 +2,8 @@ import React, {lazy, Suspense, useEffect, useState} from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 
 import { motion } from 'framer-motion'
-import { FaHtml5, FaCss3Alt, FaBootstrap, FaReact, FaGithub, FaJs } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import { FaHtml5, FaCss3Alt, FaBootstrap, FaReact, FaGithub, FaJs , FaNodeJs } from "react-icons/fa";
+import { SiNextdotjs, SiTailwindcss, SiExpress , SiMongodb } from "react-icons/si";
 
 import { DarkTheme, mediaMax } from './Themes'
 
@@ -177,33 +177,33 @@ const SkillKnow = styled.div`
     height: calc(2.5rem + 2vw);
 
     ${mediaMax(90)`
-         width: calc(2.5rem + 2.5vw);
-         height: calc(2.5rem + 2.5vw);
+         width: calc(2.3rem + 2.3vw);
+         height: calc(2.3rem + 2.3vw);
     `}
 
     ${mediaMax(70)`
-         width: calc(2rem + 2vw);
-         height: calc(2rem + 2vw);
+         width: calc(1.8rem + 1.8vw);
+         height: calc(1.8rem + 1.8vw);
     `}
 
     ${mediaMax(50)`
-         width: calc(1.5rem + 1.5vw);
-         height: calc(1.5rem + 1.5vw);
+         width: calc(1.4rem + 1.4vw);
+         height: calc(1.4rem + 1.4vw);
     `}
 
     ${mediaMax(40)`
-         width: calc(1.1rem + 2vw);
-         height: calc(1.1rem + 2vw);
+         width: calc(1rem + 2vw);
+         height: calc(1rem + 2vw);
     `}
 
     ${mediaMax(30)`
-         width: calc(1.5rem + 1.5vw);
-         height: calc(1.5rem + 1.5vw);
+         width: calc(1.2rem + 1.2vw);
+         height: calc(1.2rem + 1.2vw);
     `}
 
     ${mediaMax(20)`
-         width: calc(1.3rem + 1.3vw);
-         height: calc(1.3rem + 1.3vw);
+         width: calc(1rem + 1vw);
+         height: calc(1rem + 1vw);
     `}
 `
 
@@ -237,6 +237,9 @@ export default function MySkillsPage() {
     bt:'',
     tcss:'',
     next:'',
+    node:'',
+    express:'',
+    db:'',
     git:''
   })
 
@@ -248,134 +251,169 @@ export default function MySkillsPage() {
     bt:'',
     tcss:'',
     next:'',
+    node:'',
+    express:'',
+    db:'',
     git:''
   })
 
   useEffect(()=>{
     if(window.matchMedia("(max-width:90em)").matches){
       setXaxis({
-          html:'3',
-          css:'-13.3',
-          js:'-5',
-          react:'-24',
-          bt:'20',
-          tcss:'19',
-          next:'-12',
-          git:'11'
+          html:'0',
+          css:'14.5',
+          js:'-14',
+          react:'-1',
+          bt:'28',
+          tcss:'25',
+          next:'-16',
+          node:'-29',
+          express:'-15',
+          db:'12',
+          git:'14'
         })
 
       setYaxis({
-          html:'-9.5',
-          css:'-1',
-          js:'11.5',
-          react:'7',
-          bt:'1',
-          tcss:'-13',
-          next:'-15.5',
-          git:'15'
+          html:'-8.5',
+          css:'2',
+          js:'0',
+          react:'12',
+          bt:'5',
+          tcss:'-9',
+          next:'13.5',
+          node:'-1',
+          express:'-15',
+          db:'-16',
+          git:'14'
         })
 
     }
 
     if(window.matchMedia("(max-width:70em)").matches){
       setXaxis({
-          html:'3',
-          css:'-15',
-          js:'-5',
-          react:'-27',
-          bt:'22',
-          tcss:'21',
-          next:'-12',
-          git:'11'
-        })
+        html:'0',
+        css:'14.5',
+        js:'-15',
+        react:'-1',
+        bt:'30',
+        tcss:'27',
+        next:'-18',
+        node:'-30.5',
+        express:'-16.5',
+        db:'12',
+        git:'15'
+      })
 
-      setYaxis({
-          html:'-9.5',
-          css:'-1',
-          js:'11.5',
-          react:'7',
-          bt:'1',
-          tcss:'-13',
-          next:'-15.5',
-          git:'15'
-        })
+    setYaxis({
+        html:'-10.5',
+        css:'2',
+        js:'0',
+        react:'14',
+        bt:'5',
+        tcss:'-10',
+        next:'14.5',
+        node:'-1',
+        express:'-16.5',
+        db:'-18.5',
+        git:'16'
+      })
 
     }
 
     if(window.matchMedia("(max-width:50em)").matches){
       setXaxis({
-          html:'3',
-          css:'-16.5',
-          js:'-5',
-          react:'-27',
-          bt:'24',
-          tcss:'19',
-          next:'-12',
-          git:'12'
-        })
+        html:'0',
+        css:'15.5',
+        js:'-16',
+        react:'-1',
+        bt:'32',
+        tcss:'29',
+        next:'-20',
+        node:'-32.5',
+        express:'-20',
+        db:'12',
+        git:'16.5'
+      })
 
-      setYaxis({
-          html:'-9.5',
-          css:'-1',
-          js:'11.5',
-          react:'8',
-          bt:'1',
-          tcss:'-14.5',
-          next:'-15.5',
-          git:'15'
-        })
+    setYaxis({
+        html:'-12.5',
+        css:'2',
+        js:'0',
+        react:'16.5',
+        bt:'5',
+        tcss:'-11.5',
+        next:'17.5',
+        node:'-1',
+        express:'-19',
+        db:'-22.5',
+        git:'20'
+      })
 
     }
 
     if(window.matchMedia("(max-width:30em)").matches){
       setXaxis({
-          html:'3',
-          css:'-17.5',
-          js:'-6',
-          react:'-25',
-          bt:'26',
-          tcss:'20',
-          next:'-15',
-          git:'15'
-        })
+        html:'0',
+        css:'15.5',
+        js:'-16',
+        react:'-1',
+        bt:'32',
+        tcss:'29',
+        next:'-20',
+        node:'-32.5',
+        express:'-20',
+        db:'12',
+        git:'16.5'
+      })
 
-      setYaxis({
-          html:'-12',
-          css:'-4',
-          js:'17',
-          react:'10',
-          bt:'1',
-          tcss:'-23',
-          next:'-24',
-          git:'21'
-        })
+    setYaxis({
+        html:'-12.5',
+        css:'2',
+        js:'0',
+        react:'16.5',
+        bt:'5',
+        tcss:'-11.5',
+        next:'17.5',
+        node:'-1',
+        express:'-19',
+        db:'-22.5',
+        git:'20'
+      })
 
     }
-
+ 
     if(window.matchMedia("(max-width:20em)").matches){
       setXaxis({
-          html:'3',
-          css:'-17.5',
-          js:'0',
-          react:'-25',
-          bt:'25',
-          tcss:'24',
-          next:'-17',
-          git:'25'
-        })
+        html:'0',
+        css:'15.5',
+        js:'-16',
+        react:'-1',
+        bt:'32',
+        tcss:'29',
+        next:'-20',
+        node:'-32.5',
+        express:'-20',
+        db:'12',
+        git:'16.5'
+      })
 
-      setYaxis({
-          html:'-12',
-          css:'-4',
-          js:'17',
-          react:'12',
-          bt:'-2',
-          tcss:'-25',
-          next:'-26.5',
-          git:'21'
-        })
+    setYaxis({
+        html:'-12.5',
+        css:'2',
+        js:'0',
+        react:'16.5',
+        bt:'5',
+        tcss:'-11.5',
+        next:'17.5',
+        node:'-1',
+        express:'-19',
+        db:'-22.5',
+        git:'20'
+      })
 
     }
+
+
 
   },[])
 
@@ -410,6 +448,9 @@ export default function MySkillsPage() {
                           <Skill name='bootstrap' icon={FaBootstrap} x={Xaxis.bt+"vw"} y={Yaxis.bt+"vw"}/>
                           <Skill name='tailwindcss' icon={SiTailwindcss} x={Xaxis.tcss+"vw"} y={Yaxis.tcss+"vw"} />
                           <Skill name='next.js' icon={SiNextdotjs} x={Xaxis.next+"vw"}  y={Yaxis.next+"vw"} />
+                          <Skill name='node.js' icon={FaNodeJs} x={Xaxis.node+"vw"}  y={Yaxis.node+"vw"} />
+                          <Skill name='express.js' icon={SiExpress} x={Xaxis.express+"vw"}  y={Yaxis.express+"vw"} />
+                          <Skill name='mongoDB' icon={SiMongodb} x={Xaxis.db+"vw"}  y={Yaxis.db+"vw"} />
                           <Skill name='github' icon={FaGithub} x={Xaxis.git+"vw"} y={Yaxis.git+"vw"} />
 
 
