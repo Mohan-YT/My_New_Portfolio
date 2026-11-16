@@ -255,7 +255,7 @@ export default function Main() {
               {mq ? (
               <Contact
                 click={+click} target='_blank'
-                to='mailto:mohanprasanth3883@gmail.com'
+                to='mailto:mohanprasanth3737@gmail.com'
               >
                 <motion.h3
                   initial={{
@@ -275,7 +275,7 @@ export default function Main() {
             ) : (
               <Contact
                 click={+false} target='_blank'
-                to='mailto:mohanprasanth3883@gmail.com'
+                to='mailto:mohanprasanth3737@gmail.com'
               >
                 <motion.h3
                   initial={{
