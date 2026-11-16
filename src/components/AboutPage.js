@@ -20,7 +20,7 @@ const BigTitles = lazy(() => import("../subComponent/BigTitles"));
 const MainContainer = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   position: relative;
 `;
@@ -74,9 +74,9 @@ const About = styled(motion.div)`
   `};
 
   ${mediaMax(30)`
-    width: 50vw;
-    height: 60vh;
-    max-height: 60vh;
+    width: 60vw;
+    height: 75vh;
+    max-height: 75vh;
     backdrop-filter: blur(1.5px);
     margin-top: 2rem;
   `};

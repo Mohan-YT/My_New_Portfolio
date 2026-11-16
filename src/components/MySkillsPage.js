@@ -23,7 +23,7 @@ const BigTitles = lazy(()=> import('../subComponent/BigTitles'))
 const MainContainer = styled(motion.div)`
   background-color: ${props => props.theme.body};
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
